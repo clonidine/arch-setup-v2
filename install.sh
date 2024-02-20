@@ -1,4 +1,4 @@
-PACKAGES=('alacritty', 'kitty', 'i3', 'vscodium-bin', 'rust', 'flameshot', 'tor-browser-bin', 'lua', 'keepassxc', 'feh')
+PACKAGES=('alacritty' 'kitty' 'i3' 'vscodium-bin' 'rust' 'flameshot' 'tor-browser-bin' 'lua' 'keepassxc' 'feh')
 
 DEFAULT_CONFIG_PATH=~/.config
 DEFAULT_WALLPAPERS_PATH=~/Documents/Wallpapers
