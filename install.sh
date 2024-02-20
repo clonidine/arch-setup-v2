@@ -33,9 +33,9 @@ InstallYay () {
 }
 
 InstallPackages () {
-  for package in ${PACKAGES[@]}
+  for package in "${PACKAGES[@]}"
   do
-    echo $package
+    yay -S $package
   done
 }
 
