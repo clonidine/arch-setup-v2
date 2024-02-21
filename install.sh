@@ -6,8 +6,8 @@ DEFAULT_WALLPAPERS_PATH=~/Documents/Wallpapers
 DOTFILES_REPOSITORY='https://github.com/clonidine/.dotfiles.git'
 DOTFILES_DIRECTORY_NAME='.dotfiles'
 
-WALLPAPERS_REPOSITORY='https://github.com/clonidine/wallpapers.git'
-WALLPAPERS_DIRECTORY_NAME='wallpapers'
+WALLPAPERS_DIRECTORY_NAME=${DOTFILES_DIRECTORY_NAME}'/wallpapers'
+CONFIG_DIRECTORY_NAME=${DOTFILES_DIRECTORY_NAME}'/.config'
 
 YAY_GIT='https://aur.archlinux.org/yay.git'
 
@@ -41,18 +41,18 @@ InstallPackages () {
 
 InstallWallpapers () {
   CreateDirectory $DEFAULT_WALLPAPERS_PATH
-  CloneRepository $WALLPAPERS_REPOSITORY
   CopyTo $WALLPAPERS_DIRECTORY_NAME $DEFAULT_WALLPAPERS_PATH
 }
 
 InstallDotfiles () {
   CreateDirectory $DEFAULT_CONFIG_PATH
-  CloneRepository $DOTFILES_REPOSITORY
-  CopyTo $DOTFILES_DIRECTORY_NAME $DEFAULT_CONFIG_PATH
+  CopyTo $CONFIG_DIRECTORY_NAME $DEFAULT_CONFIG_PATH
 }
 
 InstallYay
 InstallPackages
+
+CloneRepository $DOTFILES_REPOSITORY
 
 InstallWallpapers
 InstallDotfiles
